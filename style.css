@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+.btn-small {
+    padding: 8px 18px;
+    background: linear-gradient(135deg, gold, #ffcc33);
+    color: black !important;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero h1 {
+    font-size: 55px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, gold, #ffcc33);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,215,0,0.6);
+}
+
+.services {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 40px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: 0.8s ease;
+}
+
+.gallery {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+.contacts {
+    padding: 100px 20px;
+    text-align: center;
+    background: #111;
+}
+
+.contacts a {
+    color: gold;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+@media (max-width: 1024px) {
+    .cards {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+/* ===== PERFECT MOBILE ===== */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px 8px;
+    }
+
+    .hero {
+        height: 85vh;
+        padding: 0 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 15px;
+        border-radius: 25px;
+    }
+
+    .services {
+        padding: 70px 15px;
+    }
+
+    .services h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .gallery {
+        padding: 70px 15px;
+    }
+
+    .gallery h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+        gap: 15px;
+    }
+
+    .contacts {
+        padding: 70px 15px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 15px;
+    }
+
+    .whatsapp {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
